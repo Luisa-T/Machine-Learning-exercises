@@ -1,0 +1,32 @@
+
+import timeit
+timeBubble = []
+timeHeap = []
+timeShell = []
+timeComb = []
+timeBucket = []
+def timePopulate():
+	for numRandomItems in []:
+		base = []
+		base = numRandomItems.randomItems
+
+		_tmp = list(base)
+		timeBubble.append(timeit.timeit("bubbleSort({})".format(_tmp), \
+		setup="from __main__ import bubbleSort", \
+		number=1))
+		_tmp = list(base)
+		timeHeap.append(timeit.timeit("heapSort({})".format(_tmp), \
+		setup="from __main__ import heapSort", \
+		number=1))
+		_tmp = list(base)
+		timeShell.append(timeit.timeit("shellSort({})".format(_tmp), \
+        setup="from __main__ import shellSort", \
+        number=1))
+		_tmp = list(base)
+		timeComb.append(timeit.timeit("comb_sort({})".format(_tmp), \
+        setup="from __main__ import comb_sort", \
+        number=1))
+		_tmp = list(base)
+		timeBucket.append(timeit.timeit("bucketSort({})".format(_tmp), \
+        setup="from __main__ import bucketSort", \
+        number=1))
